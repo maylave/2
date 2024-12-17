@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="/css/regist/style.css">
+</head>
+<body>
+    <form id="registration-form">
+        <h1>Регистрация</h1>
+        
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" placeholder="Введите ваш e-mail" required>
+
+        <label for="first-name">Имя:</label>
+        <input type="text" id="first-name" name="first-name" placeholder="Введите ваше имя" required>
+
+        <label for="last-name">Фамилия:</label>
+        <input type="text" id="last-name" name="last-name" placeholder="Введите вашу фамилию" required>
+
+        <label for="age">Возраст:</label>
+        <input type="number" id="age" name="age" placeholder="Введите ваш возраст" min="1" required>
+        <p>Или выберите дату рождения:</p>
+        <input type="date" id="birth-date" name="birth-date" required>
+
+        <label for="gender">Пол:</label>
+        <select id="gender" name="gender" required>
+            <option value="">Выберите пол</option>
+            <option value="male">Мужской</option>
+            <option value="female">Женский</option>
+        </select>
+
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" name="password" placeholder="Введите пароль" required>
+
+        <label for="confirm-password">Повторите пароль:</label>
+        <input type="password" id="confirm-password" name="confirm-password" placeholder="Повторите пароль" required>
+
+        <label for="photo">Семейная фотография:</label>
+        <input type="file" id="photo" name="photo" accept="image/*" required>
+
+        <label>
+            <input type="checkbox" id="consent" name="consent" required>
+            Я согласен на обработку персональных данных
+        </label>
+
+        <button type="submit">Зарегистрироваться</button>
+        <p id="message"></p>
+    </form>
+
+    <script>
+        document.getElementById('registration-form').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            const email = document.getElementById('email').value;
+            const firstName = document.getElementById('first-name').value;
+            const lastName = document.getElementById('last-name').value;
+            const age = document.getElementById('age').value;
+            const gender = document.getElementById('gender').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            const consent = document.getElementById('consent').checked;
+
+            let message = '';
+
+            // Валидация данных
+            if (!email || !firstName || !lastName || !age || !gender || !password || !confirmPassword || !consent) {
+                message = 'Пожалуйста, заполните все обязательные поля.';
+            } else if (password !== confirmPassword) {
+                message = 'Пароли не совпадают.';
+            } else {
+                message = 'Регистрация успешна!';
+              
+            }
+
+            document.getElementById('message').textContent = message;
+        });
+    </script>
+</body>
+</html> 

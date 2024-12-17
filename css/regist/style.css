@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #333;
+    font-family: Arial, sans-serif;
+    height: 120vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    
+    gap: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #222;
+    width: 300px;
+    margin: 0 auto;
+   
+    box-shadow: 10px 4px 20px rgba(0, 0, 0, 0.2); /* Увеличенная тень для формы */
+}
+
+input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #555555;
+    border-radius: 5px;
+    background-color: #454545;
+    color: #000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для инпутов */
+}
+select{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #555555;
+    border-radius: 5px;
+    background-color: #454545;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для инпутов */
+}
+
+button{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #5d5d5d;
+    border-radius: 5px;
+    background-color: #5d5d5d;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для кнопки */
+}
+input::placeholder{
+    color: #000;
+}
